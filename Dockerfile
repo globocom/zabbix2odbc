@@ -1,6 +1,6 @@
 FROM python:2.7-slim
 
-LABEL maintainer=zabbix@corp.globo.com
+LABEL maintainer=globo.com
 
 ENV APP_HOME /home/app/
 
