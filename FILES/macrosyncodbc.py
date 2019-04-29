@@ -33,7 +33,7 @@ class MacroSyncODBCforMySQL(object):
 				return None
 			hosts = self.zabbix.host.get(
 				{'groupids': group_id, 'selectMacros': 'extend', 'output': ['host'], 'filter': {'status': '0'}})
-			self.logger.info("Found %d hosts.." % hosts.__len__())
+			self.logger.info("Found %d MySQL hosts.." % hosts.__len__())
 			self.logger.debug('Hosts:')
 			self.logger.debug(hosts)
 			hosts_macros = {i['host']: {j['macro']: j['value'] for j in i['macros']} for i in hosts}
@@ -146,7 +146,7 @@ class MacroSyncODBCforOracle(object):
 				return None
 			hosts = self.zabbix.host.get(
 				{'groupids': group_id, 'selectMacros': 'extend', 'output': ['host'], 'filter': {'status': '0'}})
-			self.logger.info("Found %d hosts.." % hosts.__len__())
+			self.logger.info("Found %d Oracle hosts.." % hosts.__len__())
 			self.logger.debug('Hosts:')
 			self.logger.debug(hosts)
 			hosts_macros = {i['host']: {j['macro']: j['value'] for j in i['macros']} for i in hosts}
