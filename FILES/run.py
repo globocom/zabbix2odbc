@@ -15,7 +15,7 @@ logger.setLevel(getattr(logging, os.getenv("LOG_LEVEL")))
 
 confMySQL = MacroSyncODBCforMySQL()
 confOracle = MacroSyncODBCforOracle()
-logger.info("MacroSyncODBC was started")
+logger.info("Zabbix2ODBC was started")
 while True:
     try:
         confMySQL.sync()
@@ -26,7 +26,7 @@ while True:
         time.sleep(float(os.getenv("INTERVAL_TIME")))
 
     except (KeyboardInterrupt, SystemExit), e:
-        logger.info("MacroSyncODBC interrupted by %s" % e.__class__.__name__)
+        logger.info("Zabbix2ODBC interrupted by %s" % e.__class__.__name__)
         confMySQL.zabbix.user.logout([])
         confOracle.zabbix.user.logout([])
         break
