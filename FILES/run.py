@@ -27,4 +27,6 @@ while True:
 
     except (KeyboardInterrupt, SystemExit), e:
         logger.info("MacroSyncODBC interrupted by %s" % e.__class__.__name__)
+        confMySQL.zabbix.user.logout([])
+        confOracle.zabbix.user.logout([])
         break
