@@ -29,4 +29,4 @@ while True:
         logger.info("Zabbix2ODBC interrupted by %s" % e.__class__.__name__)
         confMySQL.zabbix.user.logout([])
         confOracle.zabbix.user.logout([])
-        break
+        exit(1)
